@@ -27,7 +27,6 @@ node {
         withEnv(['CI = true']) {
             stage('Build') {
                 sh 'npm install'
-                sh 'ls -l'
             }
             stage('Test') {
                 sh './jenkins/scripts/test.sh'
