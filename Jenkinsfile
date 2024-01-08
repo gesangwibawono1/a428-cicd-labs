@@ -1,7 +1,7 @@
 // pipeline {
 //     agent {
 //         docker {
-//             image 'node:lts-buster-slim'
+//             image 'node:16-buster-slim'
 //             args '-p 3000:3000'
 //         }
 //     }
@@ -23,7 +23,7 @@
 // }
 
 node {
-    docker.image('node:lts-buster-slim').inside('-p 3000:3000') {
+    docker.image('node:16-buster-slim').inside('-p 3000:3000') {
         withEnv(['CI = true']) {
             stage('Build') {
                 sh 'npm install'
